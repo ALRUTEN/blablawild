@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.apprenti.blablawild.SearchItineraryActivity">
+
+    <TextView
+        android:layout_width="231dp"
+        android:layout_height="39dp"
+        android:text="Departure"
+        tools:layout_editor_absoluteX="3dp"
+        android:id="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/Departure"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Departure"
+        android:layout_width="230dp"
+        android:layout_height="39dp"
+        tools:layout_editor_absoluteX="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:layout_width="231dp"
+        android:layout_height="42dp"
+        android:text="Destination"
+        tools:layout_editor_absoluteX="3dp"
+        android:id="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/Destination"
+        app:layout_constraintTop_toBottomOf="@+id/Departure" />
+
+    <EditText
+        android:id="@+id/Destination"
+        android:layout_width="231dp"
+        android:layout_height="41dp"
+        tools:layout_editor_absoluteX="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="231dp"
+        android:layout_height="46dp"
+        android:text="Date"
+        tools:layout_editor_absoluteX="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/Destination" />
+
+    <EditText
+        android:layout_width="230dp"
+        android:layout_height="39dp"
+        tools:layout_editor_absoluteX="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        android:id="@+id/editText" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="230dp"
+        android:layout_height="61dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+</android.support.constraint.ConstraintLayout>
