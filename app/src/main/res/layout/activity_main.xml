@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context="com.example.apprenti.blablawild.MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/roadf"
+        app:srcCompat="@drawable/roadf" />
+
     <include layout="@layout/content_main" />
 
     <android.support.design.widget.FloatingActionButton
@@ -14,6 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="@android:color/holo_orange_light" />
+        app:backgroundTint="@android:color/holo_orange_light"
+        app:srcCompat="@android:drawable/ic_search_category_default" />
 
 </android.support.design.widget.CoordinatorLayout>

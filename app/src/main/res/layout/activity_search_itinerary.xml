@@ -10,60 +10,77 @@
         android:layout_width="231dp"
         android:layout_height="39dp"
         android:text="Departure"
-        tools:layout_editor_absoluteX="3dp"
+        android:gravity="center"
         android:id="@+id/textView2"
         app:layout_constraintBottom_toTopOf="@+id/Departure"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
         android:id="@+id/Departure"
         android:layout_width="230dp"
         android:layout_height="39dp"
-        tools:layout_editor_absoluteX="3dp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:layout_width="231dp"
         android:layout_height="42dp"
+        android:gravity="center"
         android:text="Destination"
-        tools:layout_editor_absoluteX="3dp"
         android:id="@+id/textView"
         app:layout_constraintBottom_toTopOf="@+id/Destination"
-        app:layout_constraintTop_toBottomOf="@+id/Departure" />
+        app:layout_constraintTop_toBottomOf="@+id/Departure"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
         android:id="@+id/Destination"
         android:layout_width="231dp"
         android:layout_height="41dp"
-        tools:layout_editor_absoluteX="3dp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
+        android:gravity="center"
+        android:clickable="true"
+        android:hint="@string/app_name"
         android:layout_width="231dp"
         android:layout_height="46dp"
         android:text="Date"
-        tools:layout_editor_absoluteX="3dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/Destination" />
+        app:layout_constraintBottom_toTopOf="@+id/editDate"
+        app:layout_constraintTop_toBottomOf="@+id/Destination"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.503" />
+
 
     <EditText
         android:layout_width="230dp"
         android:layout_height="39dp"
-        tools:layout_editor_absoluteX="3dp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        android:id="@+id/editText" />
+        android:id="@+id/editDate"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="230dp"
         android:layout_height="61dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="3dp"
+        android:text="Valider"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editDate"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
