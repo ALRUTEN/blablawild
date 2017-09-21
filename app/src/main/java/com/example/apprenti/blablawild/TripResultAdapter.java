@@ -26,6 +26,7 @@ public class TripResultAdapter  extends BaseAdapter {
 
     @Override
     public int getCount() {
+
         return items.size(); //returns total of items in the list
     }
 
@@ -36,6 +37,7 @@ public class TripResultAdapter  extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
+
         return position;
     }
 

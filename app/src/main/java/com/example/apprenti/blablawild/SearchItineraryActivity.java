@@ -12,14 +12,21 @@ import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
+
+import static com.example.apprenti.blablawild.R.id.editDate;
 
 public class SearchItineraryActivity extends AppCompatActivity {
 
     Button button;
     EditText departure;
     EditText destination;
-    EditText date;
+    EditText date ;
+    String departureText;
+    String destinationText;
+    String datedepart;
+
 
 
     @Override
@@ -31,7 +38,7 @@ public class SearchItineraryActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.button);
         departure = (EditText) findViewById(R.id.Departure);
         destination = (EditText) findViewById(R.id.Destination);
-        date = (EditText) findViewById(R.id.editDate);
+        date = (EditText) findViewById(editDate);
         date.setFocusable(false);
 
 
@@ -60,39 +67,40 @@ public class SearchItineraryActivity extends AppCompatActivity {
 
         date.setOnClickListener(new View.OnClickListener() {
 
-                                    @Override
-                                    public void onClick(View v) {
-                                        // TODO Auto-generated method stub
-                                        new DatePickerDialog(SearchItineraryActivity.this, calendar, myCalendar
-                                                .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                                                myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-                                    }
-                                });
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(SearchItineraryActivity.this, calendar, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
 
 
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        String departureText = departure.getText().toString();
-                        String destinationText = destination.getText().toString();
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                  departureText = departure.getText().toString();
+                  destinationText = destination.getText().toString();
+                  datedepart = date.getText().toString();
+                if ((departureText.equals("")) || (destinationText.equals(""))) {
+                    Toast.makeText(SearchItineraryActivity.this, "Veuillez remplir les champs", Toast.LENGTH_SHORT).show();
 
-                        if ((departureText.equals("")) || (destinationText.equals(""))) {
-                            Toast.makeText(SearchItineraryActivity.this, "Veuillez remplir les champs", Toast.LENGTH_SHORT).show();
-
-                        } else {
-                            Intent intent = new Intent(SearchItineraryActivity.this,
-                                    ViewSearchItineraryResultsListActivity.class);
-                            intent.putExtra("departure", departure.getText().toString());
-                            intent.putExtra("destination", destination.getText().toString());
-                            startActivity(intent);
-
-                        }
-                    }
-                });
+                } else {
+                    Intent intent = new Intent(SearchItineraryActivity.this,
+                            ViewSearchItineraryResultsListActivity.class);
+                    SearchRequestModel searchRequestModel = new SearchRequestModel(departureText, destinationText, myCalendar.getTime());
+                    intent.putExtra("searchRequestModel", searchRequestModel);
+                    startActivity(intent);
 
 
+                }
+            }
+        });
 
-}
+
+
+    }
 
 
 

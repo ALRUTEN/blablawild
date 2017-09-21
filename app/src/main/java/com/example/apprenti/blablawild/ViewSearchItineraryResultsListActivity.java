@@ -3,10 +3,12 @@ package com.example.apprenti.blablawild;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ViewSearchItineraryResultsListActivity extends AppCompatActivity {
 
@@ -19,8 +21,17 @@ public class ViewSearchItineraryResultsListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_search_itinerary_results_list);
 
-        String departure = getIntent().getStringExtra("departure");
-        String destination = getIntent().getStringExtra("destination");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy-hh:mm");
+
+
+        SearchRequestModel searchRequestModel= getIntent().getExtras().getParcelable("searchRequestModel");
+
+        String departure = searchRequestModel.getVilledepart();
+        String destination = searchRequestModel.getVilledestination();
+        Date date = searchRequestModel.getDatedepart();
+        Toast.makeText(ViewSearchItineraryResultsListActivity.this, sdf.format(date), Toast.LENGTH_SHORT).show();
+        //String departure = getIntent().getStringExtra("departure");
+        //String destination = getIntent().getStringExtra("destination");
 
         setTitle(departure + " - " +destination);
 
@@ -28,7 +39,6 @@ public class ViewSearchItineraryResultsListActivity extends AppCompatActivity {
         mListViewResults = (ListView) findViewById(R.id.Road);
         ArrayList<TripResultModel> results = new ArrayList<>();
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy-hh:mm");
 
         try {
             results.add(new TripResultModel("Bruce", sdf.parse("21/02/2017-15:30"), 15));
