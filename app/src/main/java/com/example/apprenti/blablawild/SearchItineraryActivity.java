@@ -46,7 +46,7 @@ public class SearchItineraryActivity extends AppCompatActivity {
 
         final DatePickerDialog.OnDateSetListener calendar = new DatePickerDialog.OnDateSetListener() {
             private void updateLabel() {
-                String myFormat = "dd/MM/yy"; //In which you need put here
+                String myFormat = "dd/MM/yyyy"; //In which you need put here
                 SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
                 date.setText(sdf.format(myCalendar.getTime()));
@@ -84,7 +84,7 @@ public class SearchItineraryActivity extends AppCompatActivity {
                   destinationText = destination.getText().toString();
                   datedepart = date.getText().toString();
                 if ((departureText.equals("")) || (destinationText.equals(""))) {
-                    Toast.makeText(SearchItineraryActivity.this, "Veuillez remplir les champs", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SearchItineraryActivity.this,R.string.Toast, Toast.LENGTH_SHORT).show();
 
                 } else {
                     Intent intent = new Intent(SearchItineraryActivity.this,

@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">Rechecher</string>
+    <string name="app_name">BLABLAWILD</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="Departure">Depart</string>
+    <string name="Destination">Destination</string>
+    <string name="Date">Date</string>
+    <string name="Valider">Valider</string>
+    <string name="Prenom">Prénom</string>
+    <string name="destination">Destination</string>
+    <string name="Prix">Prix</string>
+    <string name="Toast">Veuillez remplir les champs</string>
 
 </resources>

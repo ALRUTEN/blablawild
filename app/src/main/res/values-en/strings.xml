@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BLABLAWILD</string>
+    <string name="Date">Date</string>
+    <string name="Departure">Departure</string>
+    <string name="Destination">Destination</string>
+    <string name="Prenom">First name</string>
+    <string name="Prix">Price</string>
+    <string name="Toast">Please fill in the fields</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="destination">Destination</string>
+    <string name="Valider">Validate</string>
+</resources>
